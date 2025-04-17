@@ -1,6 +1,6 @@
 # Flutter Stupid Cubit Pattern Realization
 
-To make this bullshit work, I used **StreamBuilder**, what i don't advise you to do, because **StreamBuilder** already has tools for working with states, use **snapshot.connectionState** or use something like **notifier** or better use **BlocBuilder** with **flutter_bloc**.
+To make this bullshit work, I used **StreamBuilder**, what I don't advise you to do, because **StreamBuilder** already has tools for working with states, use **snapshot.connectionState** or use something like **notifier** or better use **BlocBuilder** with **flutter_bloc**.
 
 ## Example:
 ```dart
@@ -24,7 +24,7 @@ class MyCubit extends CubitPattern {
 ```
 ## Another example (with states)
 Cubit:
-```
+```dart
 import 'package:dio/dio.dart';
 import 'source.dart';
 
@@ -62,7 +62,7 @@ class MyCubit extends CubitPattern {
 ```
 
 Page:
-```
+```dart
 // DO NOT USE CUBIT PATTERN WITH STREAM BUILDER
 // IT ALREADY HAS A CONNECTION STATE
 // This is just an example to show how it works
