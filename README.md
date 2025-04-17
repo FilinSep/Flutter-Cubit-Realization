@@ -1,16 +1,24 @@
-# customcubit
+# Flutter Stupid Cubit Pattern Realization
 
-A new Flutter project.
+To make this bullshit work, I used **StreamBuilder**, what i don't advise you to do. Better use something like **notifier** or **BlocBuilder** with **flutter_bloc**
 
-## Getting Started
+## Example:
+```dart
+class MyCubit extends CubitPattern {
+  @override
+  // Add state to stream at start of listening
+  void onListen() {
+    emit('Cubit is listened');
+  }
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+  // Event, to set states use emit, like in flutter_bloc
+  Future<void> doSomething() async {
+    await Future.delayed(Duration(seconds: 2));
+    emit('waiting 2 seconds');
+    await Future.delayed(Duration(seconds: 2));
+    emit('then waiting 3 seconds');
+    await Future.delayed(Duration(seconds: 3));
+    emit('Done!');
+  }
+}
+```
